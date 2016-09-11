@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speech View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeechViewController" customModule="SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K79-D2-S9c">
+                                <frame key="frameInset" minX="150" minY="584" width="75" height="75"/>
+                                <state key="normal" image="Microphone-96">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="microphoneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WIE-Ra-UdB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap mic button to start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-KT-AIJ">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="152"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-jc-gBy">
+                                <frame key="frameInset" minX="16" minY="188" width="343" height="388"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.50980392156862742" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hYa-KT-AIJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="9Kx-PW-omg"/>
+                            <constraint firstItem="K79-D2-S9c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="134" id="AvC-t3-P22"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XDc-jc-gBy" secondAttribute="trailing" id="HFN-e5-bKZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K79-D2-S9c" secondAttribute="trailing" constant="134" id="M7z-Yz-Qce"/>
+                            <constraint firstItem="XDc-jc-gBy" firstAttribute="top" secondItem="hYa-KT-AIJ" secondAttribute="bottom" constant="8" id="Rzd-xO-W1E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K79-D2-S9c" secondAttribute="bottom" constant="8" id="TXq-3P-s5L"/>
+                            <constraint firstItem="K79-D2-S9c" firstAttribute="top" secondItem="XDc-jc-gBy" secondAttribute="bottom" constant="8" id="c2n-Ul-46T"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hYa-KT-AIJ" secondAttribute="leading" id="mET-vB-UDc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XDc-jc-gBy" secondAttribute="leading" id="w51-ft-BvQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="microphoneButton" destination="K79-D2-S9c" id="qM1-5z-ZxZ"/>
+                        <outlet property="textView" destination="XDc-jc-gBy" id="Pe8-QQ-tWD"/>
+                        <outlet property="titleLabel" destination="hYa-KT-AIJ" id="vy4-2l-yWf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Microphone-96" width="96" height="96"/>
+    </resources>
+</document>
